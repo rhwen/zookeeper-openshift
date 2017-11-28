@@ -60,7 +60,7 @@ spec:
       containers:
       - name: zookeeper
         imagePullPolicy: Always
-        image: "192.168.1.14:5000/rhwen-zookeeper:latest"
+        image: "registry.example.com:5000/rhwen-zookeeper:latest"
         ports:
         - containerPort: 2181
           name: client

@@ -28,9 +28,11 @@ if [[ ! -f "$ZOO_CONF_DIR/zoo.cfg" ]]; then
 
     echo "maxClientCnxns=$ZOO_MAX_CLIENT_CNXNS" >> "$CONFIG"
 
-    for ((i=0; i<$ZOO_SERVERS_NUM; i=i+1)); do
-        echo "server.$i=$HOST_PREFIX-$i$HOST_POSTFIX:2888:3888" >> "$CONFIG"; 
-    done
+    if [[ -n $ZOO_SERVERS_NUM ]]; then
+        for ((i=0; i<$ZOO_SERVERS_NUM; i=i+1)); do
+            echo "server.$i=$HOST_PREFIX-$i$HOST_POSTFIX:2888:3888" >> "$CONFIG"; 
+        done
+    fi
 fi
 
 # Write myid only if it doesn't exist
