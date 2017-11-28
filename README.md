@@ -23,3 +23,8 @@ $ oc adm policy add-scc-to-user anyuid system:serviceaccount:zookeeper:default
 
 ## Create resources with zookeeper.yaml
 $ oc create -f zookeeper.yaml
+
+
+## Reference
+https://hub.docker.com/_/zookeeper/
+https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/
