@@ -46,4 +46,5 @@ USER jboss
 ENV PATH=$PATH:/home/jboss/$DISTRO_NAME/bin \
     ZOOCFGDIR=$ZOO_CONF_DIR
 
-CMD ["/opt/run-java/run-zookeeper.sh", "zkServer.sh", "start-foreground"]
+ENTRYPOINT ["/opt/run-java/run-zookeeper.sh"]
+CMD [ "zkServer.sh", "start-foreground"]
